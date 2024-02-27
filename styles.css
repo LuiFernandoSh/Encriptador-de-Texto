@@ -1,226 +1,250 @@
+/* Estilos básicos para resetear márgenes y rellenos en todos los elementos */
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #c3c8e6; /* Azul claro */
+}
+
+/* Estilos para la sección de texto */
+.texto {
+  position: absolute;
+  width: 42%;
+  height: 60%;
+  left: 12%;
+  top: 15%;
+  border: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 150%;
+  background-color: #c3c8e6; /* Azul claro */
+  /* Añadir bordes para simular el cursor */
+  border-right: 2px solid #5e6f9e;
+  animation: blink 1s infinite; /* Aplicar la animación infinitamente */
+}
+
+/* Placeholder del cuadro de texto */
+.texto::placeholder {
+  color: #5e6f9e; /* Azul más oscuro */
+}
+
+/* Estilos para el cuadro de texto en foco/activo */
+.texto:focus,
+.texto:active {
+  border: none;
+  outline: none;
+}
+
+/* Mensaje de restricciones */
+.terminos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 8px;
+  position: absolute;
+  width: 80%;
+  left: 12%;
+  top: 80%;
+}
+
+.terminos p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #8a93bd; /* Morado claro */
+  opacity: 0.8;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Botones de encriptar y desencriptar */
+.botones {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 1% 0;
+  position: absolute;
+  width: 80%;
+  left: 12%;
+  top: 82%;
+}
+
+.btn-encriptar {
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  gap: 8px;
+  width: 25%;
+  background-color: #5e6f9e; /* Azul más oscuro */
+  border-radius: 24px;
+  font-family: "Inter";
+  font-size: 18px;
+  line-height: 19px;
+  text-align: center;
+  color: #fff;
+}
+
+.btn-desencriptar {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2%;
+  gap: 8px;
+  width: 25%;
+  background: #c3c8e6; /* Azul claro */
+  border: 1px solid #5e6f9e; /* Azul más oscuro */
+  border-radius: 24px;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 19px;
+  text-align: center;
+  color: #5e6f9e; /* Azul más oscuro */
+}
+
+.btn-desencriptar:hover,
+.btn-encriptar:hover {
+  margin: 0.3%;
+  width: 24.5%;
+  padding: 1.8%;
+}
+
+/* Sección de mensaje encriptado */
+.encriptado {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 30%;
+  height: 90%;
+  left: 60%;
+  top: 5%;
+  background: #8a93bd; /* Morado claro */
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 32px;
+}
+
+/* Contenedor del mensaje encriptado */
+.mensaje-encriptado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+  gap: 16px;
+  position: absolute;
+  width: 100%;
+  top: 65%;
+  text-align: center;
+}
+
+/* Estilos para el título del mensaje encriptado */
+.mensaje-encriptado h2 {
+  width: 60%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  text-align: center;
+  color: #343a40;
+}
+
+/* Estilos para el párrafo del mensaje encriptado */
+.mensaje-encriptado p {
+  width: 80%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #495057;
+}
+
+/* Imagen en la sección de mensaje encriptado */
+.encriptado img {
+  position: absolute;
+  width: 80%;
+  height: 50%;
+  top: 15%;
+}
+
+/* Animación para el cursor en el cuadro de texto */
+@keyframes blink {
+  0%, 100% {
+    border-right-color: transparent; /* Inicial y final: cursor invisible */
   }
-  
+  50% {
+    border-right-color: #5e6f9e; /* En el medio: cursor visible */
+  }
+}
+
+/* Responsive design */
+@media (max-width: 57.5em) {
   .container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background: #c3c8e6; /* Azul claro */
+    display: flex;
+    flex-direction: row;
   }
-  
+  .encriptar {
+    width: 100%;
+  }
   .texto {
-    position: absolute;
-    width: 42%;
+    width: 80%;
     height: 60%;
-    left: 12%;
-    top: 15%;
-    border: none;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 150%;
-    background-color: #c3c8e6; /* Azul claro */
+    left: 10%;
+    top: 5%;
   }
-  
-  .texto::placeholder {
-    color: #5e6f9e; /* Azul más oscuro */
-  }
-  
-  .texto:focus,
-  .texto:active {
-    border: none;
-    outline: none;
-  }
-  
   .terminos {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 8px;
-    position: absolute;
     width: 80%;
-    left: 12%;
-    top: 80%;
+    left: 10%;
+    top: 67%;
   }
-  
   .terminos p {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 150%;
-    color: #8a93bd; /* Morado claro */
-    opacity: 0.8;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+    font-size: 16px;
   }
-  
   .botones {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 1% 0;
-    position: absolute;
     width: 80%;
-    left: 12%;
-    top: 82%;
+    left: 10%;
+    top: 70%;
   }
-  
-  .btn-encriptar {
-    align-items: center;
-    justify-content: center;
-    padding: 2%;
-    gap: 8px;
-    width: 25%;
-    background-color: #5e6f9e; /* Azul más oscuro */
-    border-radius: 24px;
-    font-family: "Inter";
-    font-size: 18px;
-    line-height: 19px;
-    text-align: center;
-    color: #fff;
-  }
-  
+  .btn-encriptar,
   .btn-desencriptar {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 2%;
-    gap: 8px;
-    width: 25%;
-    background: #c3c8e6; /* Azul claro */
-    border: 1px solid #5e6f9e; /* Azul más oscuro */
-    border-radius: 24px;
-    font-family: "Inter";
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 19px;
-    text-align: center;
-    color: #5e6f9e; /* Azul más oscuro */
+    width: 48%;
+    border-radius: 16px;
   }
-  
-  .btn-desencriptar:hover,
-  .btn-encriptar:hover {
+  .btn-encriptar:hover,
+  .btn-desencriptar:hover {
     margin: 0.3%;
-    width: 24.5%;
+    width: 47.5%;
     padding: 1.8%;
   }
-  
   .encriptado {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    width: 30%;
-    height: 90%;
-    left: 60%;
-    top: 5%;
-    background: #8a93bd; /* Morado claro */
-    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-    border-radius: 32px;
+    width: 80%;
+    height: 15%;
+    left: 10%;
+    top: 80%;
   }
-  
   .mensaje-encriptado {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1%;
-    gap: 16px;
-    position: absolute;
     width: 100%;
-    top: 65%;
-    text-align: center;
+    top: 5%;
   }
-  
-  .mensaje-encriptado h2 {
-    width: 60%;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 120%;
-    text-align: center;
-    color: #343a40;
-  }
-  
-  .mensaje-encriptado p {
-    width: 80%;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    text-align: center;
-    color: #495057;
-  }
-  
   .encriptado img {
-    position: absolute;
-    width: 80%;
-    height: 50%;
-    top: 15%;
+    top: 0;
+    display: none;
+    visibility: hidden;
   }
-  
-  /* Responsive design */
-  @media (max-width: 57.5em) {
-    .container {
-      display: flex;
-      flex-direction: row;
-    }
-    .encriptar {
-      width: 100%;
-    }
-    .texto {
-      width: 80%;
-      height: 60%;
-      left: 10%;
-      top: 5%;
-    }
-    .terminos {
-      width: 80%;
-      left: 10%;
-      top: 67%;
-    }
-    .terminos p {
-      font-size: 16px;
-    }
-    .botones {
-      width: 80%;
-      left: 10%;
-      top: 70%;
-    }
-    .btn-encriptar,
-    .btn-desencriptar {
-      width: 48%;
-      border-radius: 16px;
-    }
-    .btn-encriptar:hover,
-    .btn-desencriptar:hover {
-      margin: 0.3%;
-      width: 47.5%;
-      padding: 1.8%;
-    }
-    .encriptado {
-      width: 80%;
-      height: 15%;
-      left: 10%;
-      top: 80%;
-    }
-    .mensaje-encriptado {
-      width: 100%;
-      top: 5%;
-    }
-    .encriptado img {
-      top: 0;
-      display: none;
-      visibility: hidden;
-    }
-  }
-  
+}
